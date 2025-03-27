@@ -18,6 +18,14 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['P'] = {
+            'toggle_preview',
+            config = {
+              use_float = false,
+              -- use_image_nvim = true,
+              -- title = 'Neo-tree Preview',
+            },
+          },
         },
       },
     },
