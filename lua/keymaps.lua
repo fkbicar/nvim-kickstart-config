@@ -6,7 +6,28 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- !!! OVERRIDDEN BY TROUBLE !!!
+-- vim.keymap.set('n', '<leader>oq', vim.diagnostic.setloclist, { desc = '[O]pen diagnostic [Q]uickfix list' })
+-- vim.keymap.set('n', '<leader>od', function()
+--  vim.diagnostic.jump {
+--    count = 1,
+--    float = true,
+--  }
+--end, { desc = '[O]pen [D]iagnostic message in floating pane' })
+--vim.keymap.set('n', '<leader>of', vim.lsp.buf.code_action, { desc = '[O]pen suggested [F]ixe(s)' })
+
+-- Show diagnostic message underneath the text
+--vim.keymap.set('n', '<leader>k', function()
+--  vim.diagnostic.config { virtual_lines = { current_line = true }, virtual_text = false }
+
+--  vim.api.nvim_create_autocmd('CursorMoved', {
+--    group = vim.api.nvim_create_augroup('line-diagnostics', { clear = true }),
+--    callback = function()
+--      vim.diagnostic.config { virtual_lines = false, virtual_text = true }
+--      return true
+--    end,
+--  })
+--end)
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which

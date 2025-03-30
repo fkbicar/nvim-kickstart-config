@@ -108,6 +108,12 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Set border colors
+      vim.api.nvim_set_hl(0, 'TelescopeBorder', { fg = 'white', bg = 'none' })
+      vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { fg = 'white', bg = 'none' })
+      vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { fg = 'white', bg = 'none' })
+      vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { fg = 'white', bg = 'none' })
     end,
   },
 }

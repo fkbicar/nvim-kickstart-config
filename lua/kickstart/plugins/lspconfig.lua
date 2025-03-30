@@ -211,8 +211,10 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
+        -- marksman = {},
+        -- ltex = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -268,6 +270,36 @@ return {
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
+
+            -- configuration for ltex_plus
+            require('lspconfig').ltex_plus.setup {
+              settings = {
+                ltex = {
+                  language = 'en-GB',
+                  enabled = {
+                    'bib',
+                    'context',
+                    'gitcommit',
+                    'html',
+                    'markdown',
+                    'org',
+                    'pandoc',
+                    'plaintex',
+                    'quarto',
+                    'mail',
+                    'mdx',
+                    'rmd',
+                    'rnoweb',
+                    'rst',
+                    'tex',
+                    'latex',
+                    'text',
+                    'typst',
+                    'xhtml',
+                  },
+                },
+              },
+            }
           end,
         },
       }

@@ -1,5 +1,5 @@
 -- [[ Setting options ]]
--- See `:help vim.opt`
+-- See `:help vim.opt`op
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
