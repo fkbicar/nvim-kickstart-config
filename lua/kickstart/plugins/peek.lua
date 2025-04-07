@@ -18,7 +18,7 @@ return {
         -- app = 'browser', -- 'webview', 'browser', string or a table of strings
         -- explained below
 
-        app = { 'brave', '--new-window' },
+        app = { 'qutebrowser', '--target=window' },
 
         filetype = { 'markdown' }, -- list of filetypes to recognize as markdown
 
